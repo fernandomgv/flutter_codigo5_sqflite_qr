@@ -58,6 +58,7 @@ class _ScannerQRPageState extends State<ScannerQRPage> {
         if (result != null) {
           _dataUrl = result!.code!;
           isUrl = regExp.hasMatch(_dataUrl);
+          print(_dataUrl);
         }
       });
     });
@@ -105,8 +106,7 @@ class _ScannerQRPageState extends State<ScannerQRPage> {
                   ),
                   Text(
                     isUrl ? _dataUrl : "Por favor escanea un carnet",
-                    //"https://www.runtastic.com/blog/es/reto-de-28-dias-entrenando-en-casa-para-principiantes/ https://www.runtastic.com/blog/es/reto-de-28-dias-entrenando-en-casa-para-principiantes/",
-                    maxLines: 2,
+                   maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: kFontPrimaryColor,
@@ -135,7 +135,6 @@ class _ScannerQRPageState extends State<ScannerQRPage> {
                           MaterialPageRoute(
                             builder: (context) => RegisterPage(
                               url: _dataUrl
-                              //url: "https://carnetvacunacion.minsa.gob.pe/#publico/certificado/index?Tk=v3-J4cMCIPqW7QWLX5wFJPZiZTc637whHDP5NcoPhJXKxU=",
                             ),
                           ),
                         );
